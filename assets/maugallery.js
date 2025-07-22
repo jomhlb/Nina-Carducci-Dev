@@ -195,7 +195,7 @@
       $(".lightboxImage").attr("src", imagesCollection[nextIndex].attr("src"));
     },
 
-
+    /** CREATION FENETRE MODALE */
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
         lightboxId ? lightboxId : "galleryLightbox"
