@@ -116,7 +116,7 @@
     openLightBox(element, lightboxId) {
       $(`#${lightboxId}`)
         .find(".lightboxImage")
-        .attr("src", element.attr("src"));
+        .attr("src", element.attr("data-full") || element.attr("src"));
       $(`#${lightboxId}`).modal("toggle");
     },
 
