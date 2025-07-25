@@ -268,6 +268,26 @@ input[type="submit"] {
 	padding: .5em 1em
 }
 
+.coordonnees a {
+	color: #1C6474;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.social-link-coordonnees img {
+	width: 20px;
+	margin-right: 5px;
+}
+
+#contact {
+	margin: auto;
+	padding-bottom: 30px;
+}
+
+#contact .coordonnees {
+	margin-top: 50px;
+}
+
 
 @media all and (max-width: 1180px) {
 	.picture {
