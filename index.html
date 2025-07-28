@@ -7,7 +7,8 @@
 
 	<!--REFERENCEMENT RESEAUX SOCIAUX-->
 	<meta property="og:title" content="Nina Carducci – Photographe à Bordeaux">
-	<meta property="og:description" content="Photographe professionnelle à Bordeaux : portraits, événements, concerts. Découvrez mon univers !">
+	<meta property="og:description"
+		content="Photographe professionnelle à Bordeaux : portraits, événements, concerts. Découvrez mon univers !">
 	<meta property="og:url" content="https://jomhlb.github.io/Nina-Carducci-Dev/">
 	<meta property="og:image" content="https://jomhlb.github.io/Nina-Carducci-Dev/assets/images/nina.webp">
 	<meta property="og:type" content="website">
@@ -16,7 +17,8 @@
 	<!--TWITTER CARDS-->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Nina Carducci – Photographe à Bordeaux">
-	<meta name="twitter:description" content="Photographe spécialisée en portraits et événements à Bordeaux. Contactez-moi pour un devis.">
+	<meta name="twitter:description"
+		content="Photographe spécialisée en portraits et événements à Bordeaux. Contactez-moi pour un devis.">
 	<meta name="twitter:image" content="https://jomhlb.github.io/Nina-Carducci-Dev/assets/images/nina.webp">
 
 	<meta name="description"
@@ -55,7 +57,7 @@
 			"https://www.instagram.com/ninacarducci.photo/?hl=fr"
 	]
   }
-	</script>	
+	</script>
 </head>
 
 <body>
@@ -95,13 +97,16 @@
 
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img src="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash.webp" class="d-block w-100" alt="Men">
+						<img src="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash.webp" class="d-block w-100"
+							alt="Men">
 					</div>
 					<div class="carousel-item">
-						<img src="./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash.webp" loading="lazy" class="d-block w-100" alt="Concert">
+						<img src="./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash.webp" loading="lazy"
+							class="d-block w-100" alt="Concert">
 					</div>
 					<div class="carousel-item">
-						<img src="./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash.webp" loading="lazy" class="d-block w-100" alt="Mariage">
+						<img src="./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash.webp" loading="lazy"
+							class="d-block w-100" alt="Mariage">
 					</div>
 				</div>
 
@@ -273,13 +278,34 @@
 			</div>
 		</div>
 
-		<div class="coordonnees">
-			<p><strong>Nina Carducci</strong></p>
-			<p><i class="fa-solid fa-location-dot icon-coordonnees"></i>68 avenue Alsace-Lorraine, 33200 Bordeaux</p>
-			<p><i class="fa-solid fa-phone icon-coordonnees"></i><a href="tel:+33556677889">05 56 67 78 89</a></p>
-			<p><i class="fa-regular fa-clock icon-coordonnees"></i>Du lundi au vendredi, 10h à 19h</p>
-			<p><a class="social-link-coordonnees" href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
-					target="_blank"><img src="assets/images/instagram.png" alt="Instagram" loading="lazy"></a>Instagram
+		<div class="coordonnees" itemscope itemtype="https://schema.org/LocalBusiness">
+			<p><strong itemprop="name">Nina Carducci</strong></p>
+
+			<p>
+				<i class="fa-solid fa-location-dot icon-coordonnees"></i>
+				<span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+					<span itemprop="streetAddress">68 avenue Alsace-Lorraine</span>,
+					<span itemprop="postalCode">33200</span>
+					<span itemprop="addressLocality">Bordeaux</span>
+				</span>
+			</p>
+
+			<p>
+				<i class="fa-solid fa-phone icon-coordonnees"></i>
+				<a href="tel:+33556677889" itemprop="telephone">05 56 67 78 89</a>
+			</p>
+
+			<p>
+				<i class="fa-regular fa-clock icon-coordonnees"></i>
+				<time itemprop="openingHours" datetime="Mo-Fr 10:00-19:00">Du lundi au vendredi, 10h à 19h</time>
+			</p>
+
+			<p>
+				<a class="social-link-coordonnees" href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
+					target="_blank" itemprop="sameAs">
+					<img src="assets/images/instagram.png" alt="Instagram" loading="lazy" />
+				</a>
+				Instagram
 			</p>
 		</div>
 
