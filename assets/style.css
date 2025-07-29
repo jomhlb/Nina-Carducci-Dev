@@ -229,18 +229,6 @@ body {
 	display: flex;
 }
 
-.picture.right::before {
-	content: ' ';
-	background-color: #BEB45A;
-	width: 80%;
-	max-width: 374px;
-	height: 329px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	z-index: -1;
-}
-
 .form-container {
 	flex: 2;
 
@@ -310,8 +298,23 @@ input[type="submit"] {
 	margin-top: 50px;
 }
 
+/*MODAL*/
+.modal-body {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.lightboxImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
 
 @media (max-width: 1440px) {
+
 	/*PHOTOS*/
 	.picture {
 		width: 30%;
@@ -324,6 +327,7 @@ input[type="submit"] {
 }
 
 @media (max-width: 1024px) {
+
 	/*SECTION A PROPOS*/
 	#about {
 		padding-block: 32px;
@@ -349,6 +353,7 @@ input[type="submit"] {
 }
 
 @media (max-width: 768px) {
+
 	/*HEADER*/
 	.top-header {
 		flex-direction: column;
@@ -395,6 +400,7 @@ input[type="submit"] {
 	.picture.left::before {
 		display: none;
 	}
+
 	.service {
 		width: 80%;
 	}
@@ -432,13 +438,10 @@ input[type="submit"] {
 	form {
 		width: 100%;
 	}
-
-	.picture.right::before {
-		display: none;
-	}
 }
 
 @media (max-width: 425px) {
+
 	/*SECTION A PROPOS*/
 	.picture.left {
 		width: auto;
@@ -472,6 +475,7 @@ input[type="submit"] {
 }
 
 @media (max-width: 375px) {
+
 	/*MENU*/
 	.nav ul {
 		gap: 16px;

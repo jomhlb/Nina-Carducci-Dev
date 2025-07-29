@@ -1,6 +1,6 @@
 (function ($) {
   $.fn.mauGallery = function (options) {
-    var options = $.extend($.fn.mauGallery.defaults, options);
+    var options = $.extend({}, $.fn.mauGallery.defaults, options);
     var tagsCollection = [];
     return this.each(function () {
       $.fn.mauGallery.methods.createRowWrapper($(this));
@@ -124,74 +124,62 @@
     /** CORRECTION DEFILEMENT IMAGES MODALE */
     /** IMAGES PRECEDENTES */
     prevImage() {
-      let activeImage = null;
-      $("img.gallery-item").each(function () {
-        if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
-          activeImage = $(this);
-        }
-      });
+      const currentSrc = $(".lightboxImage").attr("src");
+      const activeTag = $(".tags-bar span.active-tag").data("images-toggle");
+      const imagesCollection = [];
 
-      let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
-      let imagesCollection = [];
-
+      // Construire la collection d'images visibles selon le filtre
       if (activeTag === "all") {
-        $(".item-column").each(function () {
-          const img = $(this).children("img");
-          if (img.length) {
-            imagesCollection.push(img);
-          }
+        $(".item-column:visible img.gallery-item").each(function () {
+          imagesCollection.push($(this));
         });
       } else {
-        $(".item-column").each(function () {
-          const img = $(this).children("img");
-          if (img.data("gallery-tag") === activeTag) {
-            imagesCollection.push(img);
+        $(".item-column:visible img.gallery-item").each(function () {
+          if ($(this).data("gallery-tag") === activeTag) {
+            imagesCollection.push($(this));
           }
         });
       }
 
-      let index = imagesCollection.findIndex(
-        (img) => img.attr("src") === activeImage.attr("src")
-      );
+      let index = imagesCollection.findIndex(img => img.attr("src") === currentSrc);
 
-      let prevIndex = (index - 1 + imagesCollection.length) % imagesCollection.length;
+      if (index === -1) {
+        index = 0;
+      }
+      const prevIndex = (index - 1 + imagesCollection.length) % imagesCollection.length;
+
+      // Mettre à jour l'image dans la modale
       $(".lightboxImage").attr("src", imagesCollection[prevIndex].attr("src"));
     },
 
     /** IMAGES SUIVANTES */
     nextImage() {
-      let activeImage = null;
-      $("img.gallery-item").each(function () {
-        if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
-          activeImage = $(this);
-        }
-      });
+      const currentSrc = $(".lightboxImage").attr("src");
+      const activeTag = $(".tags-bar span.active-tag").data("images-toggle");
+      const imagesCollection = [];
 
-      let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
-      let imagesCollection = [];
-
+      // Construire la collection d'images visibles selon le filtre
       if (activeTag === "all") {
-        $(".item-column").each(function () {
-          const img = $(this).children("img");
-          if (img.length) {
-            imagesCollection.push(img);
-          }
+        $(".item-column:visible img.gallery-item").each(function () {
+          imagesCollection.push($(this));
         });
-
       } else {
-        $(".item-column").each(function () {
-          const img = $(this).children("img");
-          if (img.data("gallery-tag") === activeTag) {
-            imagesCollection.push(img);
+        $(".item-column:visible img.gallery-item").each(function () {
+          if ($(this).data("gallery-tag") === activeTag) {
+            imagesCollection.push($(this));
           }
         });
       }
 
-      let index = imagesCollection.findIndex(
-        (img) => img.attr("src") === activeImage.attr("src")
-      );
+      // Trouver l'index de l'image active dans la collection
+      let index = imagesCollection.findIndex(img => img.attr("src") === currentSrc);
 
-      let nextIndex = (index + 1) % imagesCollection.length;
+      if (index === -1) {
+        index = 0;
+      }
+      const nextIndex = (index + 1) % imagesCollection.length;
+
+      // Mettre à jour l'image dans la modale
       $(".lightboxImage").attr("src", imagesCollection[nextIndex].attr("src"));
     },
 
