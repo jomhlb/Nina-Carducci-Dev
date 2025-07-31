@@ -163,10 +163,13 @@
         img.attr("data-full") === currentImage || img.attr("src") === currentImage
       );
 
-      if (index > 0) {
-        const newSrc = imagesCollection[index - 1].attr("data-full") || imagesCollection[index - 1].attr("src");
-        $(`#${lightboxId} .lightboxImage`).attr("src", newSrc);
-      }
+      if (index <= 0) {
+        index = imagesCollection.length;
+      } 
+      
+      const newSrc = imagesCollection[index - 1].attr("data-full") || imagesCollection[index - 1].attr("src");
+      $(`#${lightboxId} .lightboxImage`).attr("src", newSrc);
+
     },
 
     /** IMAGES SUIVANTES */
@@ -178,10 +181,13 @@
         img.attr("data-full") === currentImage || img.attr("src") === currentImage
       );
 
-      if (index < imagesCollection.length - 1) {
-        const newSrc = imagesCollection[index + 1].attr("data-full") || imagesCollection[index + 1].attr("src");
-        $(`#${lightboxId} .lightboxImage`).attr("src", newSrc);
+      if (index === -1 || index >= imagesCollection.length - 1) {
+        index = -1;
       }
+
+      const newSrc = imagesCollection[index + 1].attr("data-full") || imagesCollection[index + 1].attr("src");
+      $(`#${lightboxId} .lightboxImage`).attr("src", newSrc);
+
     },
 
     /** CREATION FENETRE MODALE */
