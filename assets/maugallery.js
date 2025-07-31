@@ -232,7 +232,7 @@
     },
 
     filterByTag() {
-      if ($(this).hasClass("active-tag")) {
+      if ($(this).hasClass("gactive-ta")) {
         return;
       }
 
